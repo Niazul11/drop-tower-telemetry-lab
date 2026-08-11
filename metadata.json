@@ -1,0 +1,6 @@
+{
+  "name": "Drop Tower Telemetry Lab",
+  "description": "Interactive science-museum exhibit demonstrating free fall physics, zero gravity, and magnetic eddy-current braking with real-time WebGL 3D simulation and 50Hz telemetry analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

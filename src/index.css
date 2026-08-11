@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+@layer base {
+  :root, [data-theme="dark"] {
+    --bg-app: #07111F;
+    --bg-surface-deep: #0A1627;
+    --bg-surface: #0F2137;
+    --bg-surface-elevated: #172D47;
+    --bg-glass: rgba(15, 33, 55, 0.85);
+
+    --border-subtle: #1E3A5F;
+    --border-highlight: #38BDF8;
+
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+
+    --accent-primary: #0284C7;
+    --accent-cyan: #38BDF8;
+    --accent-teal: #14B8A6;
+    --accent-lime: #CFFF3F;
+    --accent-amber: #F59E0B;
+    --accent-green: #10B981;
+    --accent-purple: #8B5CF6;
+    --accent-red: #EF4444;
+
+    --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    --shadow-accent: 0 0 20px rgba(56, 189, 248, 0.3);
+    
+    --glow-cyan: 0 0 15px rgba(56, 189, 248, 0.35);
+    --glow-lime: 0 0 15px rgba(207, 255, 63, 0.35);
+    --glow-amber: 0 0 15px rgba(245, 158, 11, 0.35);
+
+    --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  [data-theme="light"] {
+    --bg-app: #F0F4F8;
+    --bg-surface-deep: #FFFFFF;
+    --bg-surface: #FFFFFF;
+    --bg-surface-elevated: #E2E8F0;
+    --bg-glass: rgba(255, 255, 255, 0.90);
+
+    --border-subtle: #CBD5E1;
+    --border-highlight: #0284C7;
+
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+
+    --accent-primary: #0284C7;
+    --accent-cyan: #0284C7;
+    --accent-teal: #0D9488;
+    --accent-lime: #65A30D;
+    --accent-amber: #D97706;
+    --accent-green: #059669;
+    --accent-purple: #7C3AED;
+    --accent-red: #DC2626;
+
+    --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+    --shadow-accent: 0 0 16px rgba(2, 132, 199, 0.2);
+
+    --glow-cyan: 0 0 12px rgba(2, 132, 199, 0.25);
+    --glow-lime: 0 0 12px rgba(101, 163, 13, 0.25);
+    --glow-amber: 0 0 12px rgba(217, 119, 6, 0.25);
+
+    --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Science Museum Lab Card styling */
+.lab-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+.lab-card-elevated {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-highlight);
+  border-radius: 12px;
+  box-shadow: var(--shadow-accent);
+}
+
+.lab-glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Legacy support aliases */
+.wpf-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+.wpf-card-elevated {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-highlight);
+  border-radius: 12px;
+  box-shadow: var(--shadow-accent);
+}
+
+/* High Contrast Mode Overrides */
+.high-contrast {
+  --bg-app: #000000 !important;
+  --bg-surface-deep: #000000 !important;
+  --bg-surface: #0A0A0A !important;
+  --bg-surface-elevated: #181818 !important;
+  --bg-glass: #000000 !important;
+
+  --text-primary: #FFFFFF !important;
+  --text-secondary: #F1F5F9 !important;
+  --text-muted: #CBD5E1 !important;
+
+  --accent-primary: #00FFFF !important;
+  --accent-cyan: #00FFFF !important;
+  --accent-lime: #FFFF00 !important;
+  --accent-amber: #FF9900 !important;
+  --accent-green: #00FF00 !important;
+
+  --border-subtle: #FFFF00 !important;
+  --border-highlight: #00FFFF !important;
+}
+
+.high-contrast button,
+.high-contrast text,
+.high-contrast span {
+  font-weight: 700 !important;
+}
+
+/* Glow utilities */
+.glow-cyan {
+  box-shadow: var(--glow-cyan);
+}
+.glow-lime {
+  box-shadow: var(--glow-lime);
+}
+.glow-amber {
+  box-shadow: var(--glow-amber);
+}
+
+/* Viewport safe utilities */
+.min-h-dvh {
+  min-height: 100dvh;
+}
